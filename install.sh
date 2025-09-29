@@ -4,7 +4,7 @@ set -e
 
 REPO_URL="https://github.com/ВАШ_ЮЗЕР/ВАШ_РЕПО.git"  # Замените на ваш repo
 CONFIG_DIR="/tmp/nixos-config"
-TARGET_DISK=""
+TARGET_DISK="nvme0n1"
 
 echo "🚀 NixOS Laptop Auto-Installer"
 echo "================================"
