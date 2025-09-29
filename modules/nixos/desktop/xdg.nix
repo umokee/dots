@@ -30,7 +30,7 @@ in
           xdg-desktop-portal-kde
         ]
         ++ lib.optionals tools.needsNiriPortal [
-          inputs.niri.packages.${pkgs.system}.xdg-desktop-portal-niri
+          #inputs.niri.packages.${pkgs.system}.xdg-desktop-portal-niri
         ]
         ++ lib.optionals tools.needsGnomePortal [
           xdg-desktop-portal-gnome
