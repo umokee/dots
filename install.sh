@@ -2,7 +2,7 @@
 #!/usr/bin/env bash
 set -e
 
-REPO_URL="https://github.com/ВАШ_ЮЗЕР/ВАШ_РЕПО.git"  # Замените на ваш repo
+REPO_URL="https://github.com/ВАШ_ЮЗЕР/ВАШ_РЕПО.git"
 CONFIG_DIR="/tmp/nixos-config"
 TARGET_DISK="nvme0n1"
 
