@@ -8,7 +8,6 @@ let
   enable = lib.elem "network" (vars.system.enable or [ ]);
 
   default = {
-    hostname = "nixos";
     firewall = false;
   };
 
@@ -17,7 +16,7 @@ in
 {
   config = lib.mkIf enable {
     networking = {
-      hostName = cfg.hostname;
+      hostName = vars.hostname;
       networkmanager.enable = true;
 
       firewall = {

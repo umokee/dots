@@ -2,9 +2,9 @@
 #!/usr/bin/env bash
 set -e
 
-REPO_URL="https://github.com/ВАШ_ЮЗЕР/ВАШ_РЕПО.git"
+REPO_URL="https://github.com/umokee/dots.git"
 CONFIG_DIR="/tmp/nixos-config"
-TARGET_DISK="nvme0n1"
+TARGET_DISK=""
 
 echo "🚀 NixOS Laptop Auto-Installer"
 echo "================================"
@@ -33,6 +33,8 @@ echo "💾 Available disks:"
 lsblk -d -o NAME,SIZE,MODEL,TYPE | grep disk
 echo
 read -p "🎯 Enter target disk name (e.g., nvme0n1, sda): " TARGET_DISK
+
+TARGET_DISK=${TARGET_DISK:-nvme0n1}
 
 if [[ ! -b "/dev/$TARGET_DISK" ]]; then
     echo "❌ Error: Disk /dev/$TARGET_DISK not found"
@@ -68,6 +70,10 @@ sudo nixos-generate-config --root /mnt --dir /mnt/etc/nixos/hosts/laptop/
 
 echo "📦 Installing NixOS (this may take a while)..."
 sudo nixos-install --flake .#laptop --no-root-passwd
+
+echo "👤 Setting up user account..."
+echo "Enter password for your user:"
+sudo nixos-enter --command 'passwd user'
 
 echo "✅ Installation completed successfully!"
 echo "🎉 You can now remove the USB drive and reboot"

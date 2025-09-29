@@ -16,7 +16,6 @@
                 mountpoint = "/boot";
               };
             };
-
             swap = {
               size = "4G";
               content = {
@@ -24,7 +23,6 @@
                 resumeDevice = false;
               };
             };
-
             root = {
               size = "100%";
               content = {
@@ -36,7 +34,6 @@
           };
         };
       };
-
       data_btrfs = {
         device = "/dev/sda";
         type = "disk";
@@ -54,7 +51,6 @@
           };
         };
       };
-
       data_ext4 = {
         device = "/dev/sdb";
         type = "disk";

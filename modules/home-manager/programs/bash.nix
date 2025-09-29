@@ -11,10 +11,10 @@
     #'';
     shellAliases = {
       list-nixos-generations = "nixos-rebuild list-generations";
-      ns dekstop = "sudo nixos-rebuild switch --flake ~/nixos#desktop";
-      hs desktop = "home-manager switch --flake ~/nixos#desktop -b backup";
-      ns dekstop = "sudo nixos-rebuild switch --flake ~/nixos#laptop";
-      hs desktop = "home-manager switch --flake ~/nixos#laptop -b backup";
+      ns-desktop = "sudo nixos-rebuild switch --flake ~/nixos#desktop";
+      ns-laptop = "sudo nixos-rebuild switch --flake ~/nixos#laptop";
+      hs-desktop = "home-manager switch --flake ~/nixos#desktop -b backup";
+      hs-laptop = "home-manager switch --flake ~/nixos#laptop -b backup";
     };
   };
 }

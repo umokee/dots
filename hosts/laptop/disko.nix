@@ -16,7 +16,6 @@
                 mountpoint = "/boot";
               };
             };
-
             swap = {
               size = "16G";
               content = {
@@ -25,12 +24,11 @@
                 resumeDevice = true;
               };
             };
-
             root = {
               size = "100%";
               content = {
                 type = "filesystem";
-                format = "ext4";
+                format = "btrfs";
                 mountpoint = "/";
               };
             };
