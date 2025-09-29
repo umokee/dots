@@ -20,7 +20,8 @@
               size = "16G";
               content = {
                 type = "swap";
-                resumeDevice = false;
+                randomEncryption = true;
+                resumeDevice = true;
               };
             };
             root = {
