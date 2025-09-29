@@ -51,7 +51,7 @@ rec {
   desktop = {
     enable = [
       "displayManager"
-      "niri"
+      "hyprland"
       "fonts"
       "matugen"
       "wallpaper"
