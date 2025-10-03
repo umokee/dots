@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./themes
-    ./desktop
-    ./programs
-  ];
-}
