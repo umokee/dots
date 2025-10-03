@@ -1,0 +1,3 @@
+{
+  backyard = ./wallpapers/Backyard.png;
+}
