@@ -29,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
@@ -42,6 +47,8 @@
     let
       system = "x86_64-linux";
 
+      wallpapers = import ./lib/wallpapers.nix;
+
       commonModules = [
         ./modules/nixos
         inputs.disko.nixosModules.disko
@@ -54,12 +61,15 @@
             inputs.nix-vscode-extensions.overlays.default
           ];
         }
+        inputs.niri.homeModules.config
         ./modules/home-manager
       ];
 
       mkSpecialArgs = hostname: {
-        inherit inputs system;
-        vars = import ./lib/vars/${hostname}.nix { lib = nixpkgs.lib; };
+        inherit inputs system wallpapers;
+        vars = import ./lib/vars/${hostname}.nix {
+          lib = nixpkgs.lib;
+        };
         tools = import ./lib/tools.nix { 
           lib = nixpkgs.lib; 
           vars = import ./lib/vars/${hostname}.nix { lib = nixpkgs.lib; };
